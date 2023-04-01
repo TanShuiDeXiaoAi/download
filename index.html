@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <title>Download</title>
+    <style>
+        #title {
+            margin-left: 80px;
+            color: red;
+            font-size: 30px;
+        }
+
+
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: blue;
+            cursor: default;
+        }
+
+        #container {
+            display: flex;
+        }
+
+        .column {
+            margin-left: 80px;
+        }
+
+        input {
+            margin-left: 80px;
+        }
+
+        /*手机端适配*/
+        @media screen and (max-width:980px) {
+            body {
+                width: 1000px;
+            }
+
+            #title {
+                margin-left: 15px;
+                color: red;
+                font-size: 20px;
+            }
+
+            a {
+                color: #000000;
+                /*删除a默认的下划线*/
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: blue;
+                cursor: default;
+            }
+
+            .column {
+                width: 290px;
+                margin-left: 15px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            p {
+                font-size: 13px;
+                margin-top: 4px;
+            }
+
+            #container {
+                display: flex;
+            }
+
+            input {
+                margin-left: 15px;
+            }
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //当按下键盘，监听输入框
+            $("input").on("keyup", function() {
+                //获取输入框的值并全部转换成小写，toLowerCase()将字符串改小写
+                var value = $(this).val().toLowerCase();
+                $(".column p").filter(function() {
+                    //把#myDiv div的的内容换成(获取#myDiv div里面的文本，将其改为小写，索引在#myDiv div中出现的value的值)
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="title">index目录</div>
+    <input placeholder="Search file">
+    <br>
+    <div id="container">
+        <div class="column">
+            <p><a href="com.termux_118.apk" download>Termux.apk</a></p>
+            <p><a href="Git-2.38.1-64-bit.exe" download>Git.exe</a></p>
+            <p><a href="hopweb_2.6.1.apk" download>HopWeb.apk</a></p>
+            <p><a href="hp-client(安卓版).apk" download>HP-client.apk</a></p>
+            <p><a href="ksweb(安卓版.apk" download>ksweb.apk</a></p>
+            <p><a href="SteamSetup.exe" download>Steam.exe</a></p>
+            <p><a href="Telegram.apk" download>Telegrame.apk</a></p>
+            <p><a href="VSCodeUserSetup-x64-1.74.0.exe" download>Vscode.exe</a></p>
+            <p><a href="小牛VPN_4.1.0.apk" download>小牛VPN.apk</a></p>
+            <p><a href="猎豹加速器.apk" download>猎豹加速器.apk</a></p>
+            <p><a href="猎豹加速器.exe" download>猎豹加速器.exe</a></p>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+    </div>
+</body>
+
+</html>
